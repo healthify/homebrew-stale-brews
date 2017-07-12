@@ -16,7 +16,7 @@ brew install elasticsearch17
 
 ### Tapping via SSH
 
-Homebrew, by default, uses HTTPS requests to clone Taps, requiring a username and password. To use SSH instead, you can use git's [`insteadOf` configuration](https://git-scm.com/docs/git-config#git-config-urlltbasegtinsteadOf):
+Homebrew, by default, uses HTTPS requests to clone Taps, requiring a username and password for private repositories. To use SSH instead, you can use git's [`insteadOf` configuration](https://git-scm.com/docs/git-config#git-config-urlltbasegtinsteadOf):
 
 ```
 git config --global url.'git@github.com:'.insteadOf https://github.com/
