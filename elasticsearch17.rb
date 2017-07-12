@@ -1,3 +1,6 @@
+# Found with: http://www.braumeister.org/repos/Homebrew/homebrew-versions/formula/elasticsearch17
+# Sourced from: https://github.com/Homebrew/homebrew-versions/blob/7536e37c7162e29873daa3e42c87f1af164b8b02/elasticsearch17.rb
+
 class Elasticsearch17 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
