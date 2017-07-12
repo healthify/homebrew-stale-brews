@@ -5,7 +5,7 @@
 To get started with using the forumals in this project, simply tap it:
 
 ```
-brew tap cbortz/stale-brews
+brew tap healthify/stale-brews
 ```
 
 Then, install your desired formula:
