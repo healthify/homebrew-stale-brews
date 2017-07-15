@@ -11,7 +11,7 @@ brew tap healthify/stale-brews
 Then, install your desired formula:
 
 ```
-brew install elasticsearch17
+brew install elasticsearch@1.7
 ```
 
 ### Tapping via SSH

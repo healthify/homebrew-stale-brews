@@ -1,13 +1,11 @@
 # Found with: http://www.braumeister.org/repos/Homebrew/homebrew-versions/formula/elasticsearch17
 # Sourced from: https://github.com/Homebrew/homebrew-versions/blob/7536e37c7162e29873daa3e42c87f1af164b8b02/elasticsearch17.rb
 
-class Elasticsearch17 < Formula
+class ElasticsearchAT17 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
   url "https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.6.tar.gz"
   sha256 "78affc30353730ec245dad1f17de242a4ad12cf808eaa87dd878e1ca10ed77df"
-
-  bottle :unneeded
 
   depends_on :java => "1.7+"
 
@@ -75,7 +73,7 @@ class Elasticsearch17 < Formula
     EOS
   end
 
-  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch17/config/elasticsearch.yml"
+  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch@1.7/config/elasticsearch.yml"
 
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>
@@ -101,9 +99,9 @@ class Elasticsearch17 < Formula
           <key>WorkingDirectory</key>
           <string>#{var}</string>
           <key>StandardErrorPath</key>
-          <string>#{var}/log/elasticsearch17.log</string>
+          <string>#{var}/log/elasticsearch@1.7.log</string>
           <key>StandardOutPath</key>
-          <string>#{var}/log/elasticsearch17.log</string>
+          <string>#{var}/log/elasticsearch@1.7.log</string>
         </dict>
       </plist>
     EOS
