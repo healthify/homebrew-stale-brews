@@ -2,6 +2,8 @@
 # Sourced from: https://github.com/Homebrew/homebrew-versions/blob/7536e37c7162e29873daa3e42c87f1af164b8b02/elasticsearch17.rb
 
 class ElasticsearchAT17 < Formula
+  DIR_NAME = 'elasticsearch@1.7'.freeze
+
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
   url "https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.6.tar.gz"
@@ -73,7 +75,7 @@ class ElasticsearchAT17 < Formula
     EOS
   end
 
-  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch@1.7/config/elasticsearch.yml"
+  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/#{DIR_NAME}/config/elasticsearch.yml"
 
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>
@@ -99,9 +101,9 @@ class ElasticsearchAT17 < Formula
           <key>WorkingDirectory</key>
           <string>#{var}</string>
           <key>StandardErrorPath</key>
-          <string>#{var}/log/elasticsearch@1.7.log</string>
+          <string>#{var}/log/#{DIR_NAME}.log</string>
           <key>StandardOutPath</key>
-          <string>#{var}/log/elasticsearch@1.7.log</string>
+          <string>#{var}/log/#{DIR_NAME}.log</string>
         </dict>
       </plist>
     EOS
