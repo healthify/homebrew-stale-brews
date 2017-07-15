@@ -1,6 +1,8 @@
 # Sourced from: https://github.com/cartr/homebrew-qt4/blob/921a1a789cbf8901536c31804a2bf8609f800c8e/qt%404.rb
 
 class QtAT48 < Formula
+  DIR_NAME = 'qt@4.8'.freeze
+
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
@@ -42,8 +44,8 @@ class QtAT48 < Formula
   def install
     args = %W[
       -prefix #{prefix}
-      -plugindir #{prefix}/lib/qt4/plugins
-      -importdir #{prefix}/lib/qt4/imports
+      -plugindir #{prefix}/lib/#{DIR_NAME}/plugins
+      -importdir #{prefix}/lib/#{DIR_NAME}/imports
       -release
       -opensource
       -confirm-license
@@ -113,8 +115,8 @@ class QtAT48 < Formula
     inreplace "configure", '=$QT_INSTALL_HEADERS"`', "=#{HOMEBREW_PREFIX}/include\"`"
     inreplace "configure", '=$QT_INSTALL_LIBS"`', "=#{HOMEBREW_PREFIX}/lib\"`"
     inreplace "configure", '=$QT_INSTALL_BINS"`', "=#{HOMEBREW_PREFIX}/bin\"`"
-    inreplace "configure", '=$QT_INSTALL_PLUGINS"`', "=#{HOMEBREW_PREFIX}/lib/qt4/plugins\"`"
-    inreplace "configure", '=$QT_INSTALL_IMPORTS"`', "=#{HOMEBREW_PREFIX}/lib/qt4/imports\"`"
+    inreplace "configure", '=$QT_INSTALL_PLUGINS"`', "=#{HOMEBREW_PREFIX}/lib/#{DIR_NAME}/plugins\"`"
+    inreplace "configure", '=$QT_INSTALL_IMPORTS"`', "=#{HOMEBREW_PREFIX}/lib/#{DIR_NAME}/imports\"`"
     inreplace "configure", '=$QT_INSTALL_SETTINGS"`', "=#{HOMEBREW_PREFIX}\"`"
 
     # Run ./configure again, to rebuild qmake
@@ -135,10 +137,10 @@ class QtAT48 < Formula
       include.install_symlink path => path.parent.basename(".framework")
     end
 
-    # Make `HOMEBREW_PREFIX/lib/qt4/plugins` an additional plug-in search path
+    # Make `HOMEBREW_PREFIX/lib/DIR_NAME/plugins` an additional plug-in search path
     # for Qt Designer to support formulae that provide Qt Designer plug-ins.
     system "/usr/libexec/PlistBuddy",
-            "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/qt4/plugins\"",
+            "-c", "Add :LSEnvironment:QT_PLUGIN_PATH string \"#{HOMEBREW_PREFIX}/lib/#{DIR_NAME}/plugins\"",
            "#{bin}/Designer.app/Contents/Info.plist"
 
     Pathname.glob("#{bin}/*.app") { |app| mv app, prefix }
