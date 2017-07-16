@@ -19,11 +19,10 @@ class QtAT48 < Formula
     sha256 "c8a0fa819c8012a7cb70e902abb7133fc05235881ce230235d93719c47650c4e"
   end
 
-  # FIXME: Move to local repository
   # Backport of Qt5 patch to fix an issue with null bytes in QSetting strings.
   patch do
-    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/41669527a2aac6aeb8a5eeb58f440d3f3498910a/patches/qsetting-nulls.patch"
-    sha256 "0deb4cd107853b1cc0800e48bb36b3d5682dc4a2a29eb34a6d032ac4ffe32ec3"
+    url "https://raw.githubusercontent.com/healthify/homebrew-stale-brews/qt-null-bytes-patch/patches/qsetting-nulls.patch"
+    sha256 "9d6d30bc3d4e1afd250c2f3ceecaa7363b11a03291b39334c4543af00cdf1212"
   end
 
   option "with-docs", "Build documentation"
