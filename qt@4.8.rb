@@ -15,13 +15,13 @@ class QtAT48 < Formula
   # Backport of Qt5 commit to fix the fatal build error with Xcode 7, SDK 10.11.
   # https://code.qt.io/cgit/qt/qtbase.git/commit/?id=b06304e164ba47351fa292662c1e6383c081b5ca
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch"
-    sha256 "c8a0fa819c8012a7cb70e902abb7133fc05235881ce230235d93719c47650c4e"
+    url "https://raw.githubusercontent.com/healthify/homebrew-stale-brews/el-capitan-patch/patches/qt/el-capitan.patch"
+    sha256 "0116ac96e7b88900e41751a53a6dbe5285210993b6952ca152e63e2d8178d6d3"
   end
 
   # Backport of Qt5 patch to fix an issue with null bytes in QSetting strings.
   patch do
-    url "https://raw.githubusercontent.com/healthify/homebrew-stale-brews/ee5ae73dbcd2438978b2a02ad10b344fca4f538a/patches/qsetting-nulls.patch"
+    url "https://raw.githubusercontent.com/healthify/homebrew-stale-brews/el-capitan-patch/patches/qt/qsetting-nulls.patch"
     sha256 "9d6d30bc3d4e1afd250c2f3ceecaa7363b11a03291b39334c4543af00cdf1212"
   end
 
