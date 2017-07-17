@@ -21,7 +21,7 @@ class QtAT48 < Formula
 
   # Backport of Qt5 patch to fix an issue with null bytes in QSetting strings.
   patch do
-    url "https://raw.githubusercontent.com/healthify/homebrew-stale-brews/ee5ae73dbcd2438978b2a02ad10b344fca4f538a/patches/qsetting-nulls.patch"
+    url "https://raw.githubusercontent.com/healthify/homebrew-stale-brews/el-capitan-patch/patches/qt/qsetting-nulls.patch"
     sha256 "9d6d30bc3d4e1afd250c2f3ceecaa7363b11a03291b39334c4543af00cdf1212"
   end
 
