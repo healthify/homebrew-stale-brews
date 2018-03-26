@@ -76,7 +76,7 @@ class ElasticsearchAT50 < Formula
   end
 
   def caveats
-    s = <<-EOS.undent
+    s = <<~EOS
       Data:    #{var}/elasticsearch/#{cluster_name}/
       Logs:    #{var}/log/elasticsearch/#{cluster_name}.log
       Plugins: #{libexec}/plugins/
@@ -84,7 +84,7 @@ class ElasticsearchAT50 < Formula
     EOS
 
     if stable?
-      s += <<-EOS.undent
+      s += <<~EOS
         plugin script: #{libexec}/bin/plugin
       EOS
     end
@@ -94,7 +94,7 @@ class ElasticsearchAT50 < Formula
 
   plist_options :manual => "elasticsearch"
 
-  def plist; <<-EOS.undent
+  def plist; <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
