@@ -92,7 +92,7 @@ class ElasticsearchAT50 < Formula
     s
   end
 
-  plist_options :manual => "elasticsearch"
+  plist_options :manual => "elasticsearch@5.0"
 
   def plist; <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
@@ -115,9 +115,9 @@ class ElasticsearchAT50 < Formula
           <key>WorkingDirectory</key>
           <string>#{var}</string>
           <key>StandardErrorPath</key>
-          <string>#{var}/log/elasticsearch.log</string>
+          <string>#{var}/log/elasticsearch@5.0.log</string>
           <key>StandardOutPath</key>
-          <string>#{var}/log/elasticsearch.log</string>
+          <string>#{var}/log/elasticsearch@5.0.log</string>
         </dict>
       </plist>
     EOS
