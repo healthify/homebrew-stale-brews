@@ -11,7 +11,7 @@ class ElasticsearchAT50 < Formula
     depends_on "gradle" => :build
   end
 
-  bottle :unneeded
+  # bottle :unneeded
 
   depends_on "openjdk@8"
 
